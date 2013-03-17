@@ -1,0 +1,161 @@
+/* CSS Document 
+* foodie css 
+* author Michael Soriano
+*/
+.clear {
+    display:block; 
+    clear:both;
+    height:1px; 
+    width:1px;
+}
+.alignRight{
+    text-align:right;
+}
+.alignLeft{
+    text-align:left;
+}
+body.public {
+    background:#F2F2F2; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    font-size: 13px;
+}
+header.row, .mid.row, footer.row {
+    background:#fff; 
+    padding:0 40px
+        
+}
+header.row{
+    padding-top:45px;
+    margin-top:35px;
+}
+header .alignRight {
+    float:right;
+}
+header .topMsg p {
+    padding:0 0 0 0; 
+    margin:0 0 0 0; 
+    font-size: 11px; 
+    font-family: Georgia, Times, serif; 
+    font-style: italic;
+}
+a.logo{
+    background:url(../images/logo.jpg); 
+    width:254px; 
+    height:97px; 
+    display:block; 
+    text-indent: -999px; 
+    position: relative; 
+    left:0px;     
+}
+.topMsg {
+    margin-top:25px;
+}
+.nav ul li {
+    float:left; 
+    list-style: none; 
+    margin:5px 20px;
+} 
+.nav {
+    background:#eee; 
+    border-bottom:19px solid #dfdfdf;
+    height: 36px; 
+    margin-top:25px; 
+    margin-bottom:20px;
+}
+.nav a {
+    color:#000;
+    font-weight: bold;
+    font-size:12px;
+    text-shadow: 1px 1px 0 #fff;
+}
+.nav a:hover {
+    color:#666;
+}
+/*start content */
+.mid.row{
+    padding-bottom:25px;
+}
+.page-desc.row {
+    margin:5px 0 22px;
+}
+.page-desc h1 {
+    font-size:24px; 
+    margin:20px 0 28px 0
+}
+.category, .product {
+    margin-bottom:30px;
+}
+.category h2, .product h2{
+    background:#505050; 
+    color:#fff; 
+    padding:25px 15px; 
+    margin:0 0 0 0; 
+    font-size:12px; 
+}
+span.price {
+    float:right;
+    color:#ff9;
+}
+.category h2 a, .product h2 a {
+    color:#fff;
+}
+.row.products{
+    margin-bottom:25px;
+}
+.row.pagin{
+    margin:0 0 0 0 ;
+}
+
+.four.columns.product .div:hover{
+    box-shadow:0px 0px 10px #666;
+} 
+.six.columns.category .div:hover{
+    box-shadow:0px 0px 10px #666;
+} 
+
+/*cart styles*/
+table#cart .thead {
+    font-weight: bold;
+}
+.row.email{
+    margin-top:10px;
+    margin-top:20px;
+}
+
+/*homepage*/
+
+.row.homepageImage{
+    position:relative; 
+    margin:8px 0 35px 0;
+}
+.row.homepageBlurb{
+    margin-bottom:35px;
+}
+.home .four h5 {
+    margin-bottom:10px;
+}
+
+
+
+
+/*footer*/
+footer.row {
+    border-top:1px solid #EEEEEE;
+    padding-bottom:28px;    
+    padding-top:25px;
+    margin-bottom:35px;
+}
+footer.row p {      
+    margin-bottom:0;
+    text-align:right;
+    font-size:10px;
+}
+footer.row p.credits{
+    color:#1e728c;
+    font-family: Georgia,Times,serif;
+    font-style: italic;
+    font-size: 9px;
+}
+footer.row p a {
+    color:#222222;
+}
