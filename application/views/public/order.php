@@ -100,6 +100,13 @@
         ?>
         </div>
     </div>
+    <div class="row">
+        <label for="captcha">Enter the Letters Below:</label>
+        <?php echo $captcha; ?><br>
+        <input type="text" name="captcha" />
+        <?php echo form_error('captcha'); ?>
+        
+    </div>
     <p><?php 
     $submit = array(
         'id'          => 'submitOrder',
