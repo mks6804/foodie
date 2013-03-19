@@ -2,6 +2,7 @@
 
 class Order extends CI_Controller {
 
+ 
     public function __construct() {
         parent::__construct();
         $this->load->model('Model_public');
@@ -61,25 +62,17 @@ class Order extends CI_Controller {
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('phone', 'Phone', 'trim|required|valid_phone');
         $this->form_validation->set_rules('instructions', 'Instructions', 'alpha_dash_space');
-        if ($this->form_validation->run() == FALSE) {
+        $this->form_validation->set_rules('captcha', 'Captcha', 'required|validate_captcha'); //activate this rule        
+       
+        
+        if ($this->form_validation->run() == FALSE) { 
             $this->_set_order_data();
         } else {
             $order = $this->Model_public->insert_order($this->input->post(NULL, TRUE));
-            //email
-//            $this->email->from('$fromEmail', '$name');
-//            $this->email->to('tes');
-//            $this->email->subject('A new order has been placed!');
-//            $this->email->message($this->input->post(NULL, TRUE));
-            
-//            echo '<pre>';
-//            print_r($this->input->post(NULL, TRUE));
-//            echo '<hr>';
-//            
-//            print_r($this->email);exit;
-            
-            //   $this->email->send();
-
             if ($order) {
+                //insert email function 
+                $this->load->library('mycaptcha');
+                $this->mycaptcha->deleteImage();
                 $this->cart->destroy();
                 redirect('order/thankyou');
             } else {
@@ -95,6 +88,10 @@ class Order extends CI_Controller {
             $data['cart'] = $session;
             $data['title'] = 'Your Order';
             $data['checkout'] = $checkout;
+                $this->load->library('mycaptcha');
+            $data['captcha'] = $this->mycaptcha->deleteImage()
+                   ->createWord()
+                   ->createCaptcha();   
             $this->load->view('public/order', $data);
         } else {
             redirect(base_url() . 'order');
